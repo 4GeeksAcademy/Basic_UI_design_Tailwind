@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Dribble Dashbord by Sebastian</title>
+  </head>
+  <body class="flex">
+    <!-- SIDE BAR MENU -->
+    <div class="nav bg-white min-h-dvh w-48 px-2 pt-1">
+      <div class="flex justify-center items-center p-2">
+        <span
+          class="px-1.5 py-0.1 mr-2 bg-orange-400 rounded-lg font-extrabold text-2xl"
+          >C</span
+        >
+        <h2 class="font-semibold">CRM Dash</h2>
+      </div>
+
+      <ul>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-grip mx-2"></i>
+            <p>Dashboard</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-people-group mx-2"></i>
+            <p>Leads</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-comments mx-2"></i>
+            <p>Chats</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-calendar mx-2"></i>
+            <p>Calendar</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-envelope mx-2"></i>
+            <p>Mails</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-chart-simple mx-2"></i>
+            <p>Statistics</p></a
+          >
+        </li>
+        <li>
+          <a
+            class="flex items-center p-2 mt-3 border border-transparent rounded-xl hover:border-orange-400 hover:bg-linear-to-r from-white via-orange-200 to-purple-200 transition"
+            href="#"
+            ><i class="fa-solid fa-gear mx-2"></i>
+            <p>Settings</p></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex flex-col w-dvw">
+      <!-- TOP BAR MENU -->
+      <div class="top-bar bg-white h-14 flex justify-between items-center px-6">
+        <h2 class="font-semibold text-xl">Dashboard</h2>
+        <div
+          class="input flex items-center border border-stone-600 w-80 px-2 py-1 rounded-lg"
+        >
+          <button class="cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass" style="color: #919191"></i>
+          </button>
+          <input
+            class="outline-none text-sm ml-2 w-full cursor-text"
+            type="text"
+            placeholder="Search"
+          />
+        </div>
+        <div class="more-details">
+          <button class="bg-orange-500 px-3 py-2 rounded-lg cursor-pointer">
+            <i class="fa-solid fa-handshake" style="color: #000000"></i>Events
+          </button>
+          <el-dropdown class="inline-block rounded-lg bg-orange-100">
+            <button
+              class="inline-flex w-full justify-center gap-x-2 rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-orange-400/20"
+            >
+              <i class="fa-brands fa-asymmetrik text-black text-xl"></i>
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                aria-hidden="true"
+                class="-mr-1 size-5 text-gray-400"
+              >
+                <path
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <el-menu
+              anchor="bottom end"
+              popover
+              class="w-56 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+            >
+              <div class="py-1">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                  >Account settings</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                  >Support</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                  >License</a
+                >
+                <form action="#" method="POST">
+                  <button
+                    type="submit"
+                    class="block w-full px-4 py-2 text-left text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                  >
+                    Sign out
+                  </button>
+                </form>
+              </div>
+            </el-menu>
+          </el-dropdown>
+        </div>
+      </div>
+
+      <!-- MAIN SECTION CONTAINER -->
+      <section class="w-100dvh h-full">
+        <div
+          class="w-auto h-[calc(100dvh-4.6rem)] m-2 bg-radial-[at_50%_50%] from-white to-orange-200 rounded-xl"
+        >
+          <!-- MAIN SECITON TOP SIDE -->
+          <div class="top-section p-3 flex items-center justify-between">
+            <div class="left-side flex gap-3">
+              <div
+                class="date flex justify-around p-1 w-120 h-10 bg-slate-50/60 border border-white rounded-xl"
+              >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >Today</a
+                >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >Yesterday</a
+                >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >Weekly</a
+                >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >Monthly</a
+                >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >Select date</a
+                >
+              </div>
+              <div
+                class="worker flex justify-around items-center py-1 px-3 w-72 h-10 bg-slate-50/60 border border-white rounded-xl"
+              >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  >All</a
+                >
+                <a
+                  class="py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                  href="#"
+                  ><i class="fa-solid fa-user-tie mr-2"></i>Sebastian</a
+                >
+                <el-dropdown
+                  class="inline-block py-1.5 px-2 text-sm rounded-2xl hover:bg-white trasition delay-50"
+                >
+                  <button
+                    class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 text-black hover:bg-white/20"
+                  >
+                    Select
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="-mr-1 size-5 text-gray-400"
+                    >
+                      <path
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <el-menu
+                    anchor="bottom end"
+                    popover
+                    class="w-56 origin-top-right divide-y divide-white/10 rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                  >
+                    <div class="py-1">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Edit</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Duplicate</a
+                      >
+                    </div>
+                    <div class="py-1">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Archive</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Move</a
+                      >
+                    </div>
+                    <div class="py-1">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Share</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Add to favorites</a
+                      >
+                    </div>
+                    <div class="py-1">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                        >Delete</a
+                      >
+                    </div>
+                  </el-menu>
+                </el-dropdown>
+              </div>
+            </div>
+            <button
+              class="py-1.5 px-2 text-sm bg-orange-300 rounded-lg hover:bg-orange-400 transition delay-50"
+            >
+              <i
+                class="fa-solid fa-bars-progress pr-1"
+                style="color: #000000"
+              ></i
+              >Page Setup
+            </button>
+          </div>
+
+          <!-- WIDGETS SECTION -->
+          <div class="widget-section px-3 grid grid-cols-6 gap-2 w-full h-24">
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">199</h1>
+              <span class="flex items-center text-sm"
+                ><i
+                  class="fa-solid mr-1 fa-users-line"
+                  style="color: #cc6724"
+                ></i
+                >New List</span
+              >
+            </div>
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">200</h1>
+              <span class="flex items-center text-sm"
+                ><i
+                  class="fa-solid mr-1 fa-user-plus"
+                  style="color: #67cc24"
+                ></i
+                >new Customer</span
+              >
+            </div>
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">153</h1>
+              <span class="flex items-center text-sm"
+                ><i class="fa-solid mr-1 fa-receipt" style="color: #74c0fc"></i
+                >Sent Invoices</span
+              >
+            </div>
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">415</h1>
+              <span class="flex items-center text-sm"
+                ><i
+                  class="fa-solid mr-1 fa-clipboard-list"
+                  style="color: #0040ff"
+                ></i
+                >Current Task</span
+              >
+            </div>
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">100</h1>
+              <span class="flex items-center text-sm"
+                ><i
+                  class="fa-solid mr-1 fa-clipboard-user"
+                  style="color: #4f6cc4"
+                ></i
+                >Leads Task</span
+              >
+            </div>
+            <div
+              class="widget bg-white rounded-xl flex flex-col justify-center pl-4"
+            >
+              <h1 class="text-3xl font-semibold mb-1">80</h1>
+              <span class="flex items-center text-sm"
+                ><i
+                  class="fa-solid mr-1 fa-clipboard-check"
+                  style="color: #da0b0b"
+                ></i
+                >Overdue Task</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="main-section-grid grid grid-rows-2 grid-cols-3 gap-2 p-2 h-[calc(100%-160px)]"
+          >
+            <!-- NEED HASN HELP -->
+            <div class="goals bg-white rounded-md">
+              <p class="pt-3 pl-6 font-bold text-xl">Current Month</p>
+              <div class="py-2 grid place-items-center px-2">
+                <div id="pie-chart"></div>
+              </div>
+            </div>
+
+            <div class="lead col-span-2 bg-white rounded-md">
+              <p class="pt-3 pl-6 font-bold text-xl">Lead Sells</p>
+              <div class="">
+                <div class="h-full mb-10 overflow-scroll" id="chart"></div>
+              </div>
+            </div>
+
+            <!-- UPCOMING MEETINGS -->
+            <div
+              class="upcoming row bg-white px-3 py-2 overflow-hidden overflow-y-scroll rounded-lg"
+            >
+              <div class="head flex items-center justify-between text-lg">
+                <p>Upcoming Meetings</p>
+                <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div class="30-min">
+                <label class="text-sm text-slate-400">30min</label>
+                <div
+                  class="meet mt-1 flex items-center justify-between border border-gray-300 rounded-2xl p-2 w-full text-sm"
+                >
+                  <span class="p-2 bg-blue-500 rounded-full"
+                    ><i class="fa-solid fa-video" style="color: #ffffff"></i
+                  ></span>
+                  <p class="w-[80%]">
+                    Meet with Hans to review Tailwind Proyect
+                  </p>
+                </div>
+                <div
+                  class="meet mt-1 flex items-center justify-between border border-gray-300 rounded-2xl p-2 w-full text-sm"
+                >
+                  <span class="p-2 bg-blue-500 rounded-full"
+                    ><i class="fa-solid fa-video" style="color: #ffffff"></i
+                  ></span>
+                  <p class="w-[80%]">
+                    Meet with Carolina to review Tailwind Proyect
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- LATEST LEADS -->
+            <div
+              class="latest bg-white px-3 py-2 overflow-hidden overflow-y-scroll rounded-lg"
+            >
+              <div class="head flex items-center justify-between mb-3 text-lg">
+                <p>Latest Leads</p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+              <div
+                class="person flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-solid fa-user-tie mr-2"></i>
+                  <p>Sebastian</p>
+                </div>
+                <p class="text-slate-500">1 min ago</p>
+              </div>
+
+              <div
+                class="person flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-solid fa-user-tie mr-2"></i>
+                  <p>Rock lee</p>
+                </div>
+                <p class="text-slate-500">3 min ago</p>
+              </div>
+
+              <div
+                class="person flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-solid fa-user-tie mr-2"></i>
+                  <p>Mob</p>
+                </div>
+                <p class="text-slate-500">30 min ago</p>
+              </div>
+
+              <div
+                class="person flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-solid fa-user-tie mr-2"></i>
+                  <p>Rick</p>
+                </div>
+                <p class="text-slate-500">2 days ago</p>
+              </div>
+            </div>
+            <!-- LEADS CHANNELS -->
+            <div
+              class="most-leads bg-white px-3 py-2 overflow-hidden overflow-y-scroll rounded-lg"
+            >
+              <div class="head flex items-center justify-between mb-3 text-lg">
+                <p>Most Leads Channels</p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+
+              <div
+                class="channel flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-brands fa-whatsapp mr-2"></i>
+                  <p>WhatsApp</p>
+                </div>
+                <p class="text-slate-500">2000</p>
+              </div>
+
+              <div
+                class="channel flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-brands fa-x-twitter mr-2"></i>
+                  <p>X</p>
+                </div>
+                <p class="text-slate-500">4190</p>
+              </div>
+
+              <div
+                class="channel flex items-center justify-between w-full py-2 px-4 mt-2 border border-gray-400 rounded-lg"
+              >
+                <div class="personal-information flex items-center">
+                  <i class="fa-brands fa-facebook-messenger mr-2"></i>
+                  <p>Messenger</p>
+                </div>
+                <p class="text-slate-500">1890</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+      const chartConfig = {
+        series: [
+          {
+            name: "Sales",
+            data: [50, 600, 30, 320, 500, 350, 200, 230, 500, 290, 100, 400],
+          },
+        ],
+        chart: {
+          type: "line",
+          height: "155px",
+          toolbar: {
+            show: false,
+          },
+        },
+        title: {
+          show: "",
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        colors: ["#020617"],
+        stroke: {
+          lineCap: "round",
+          curve: "smooth",
+        },
+        markers: {
+          size: 0,
+        },
+        xaxis: {
+          axisTicks: {
+            show: false,
+          },
+          axisBorder: {
+            show: false,
+          },
+          labels: {
+            style: {
+              colors: "#616161",
+              fontSize: "10px",
+              fontFamily: "inherit",
+              fontWeight: 400,
+            },
+          },
+          categories: [
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Ene",
+            "Feb",
+            "Mar",
+          ],
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: "#616161",
+              fontSize: "10px",
+              fontFamily: "inherit",
+              fontWeight: 400,
+            },
+          },
+        },
+        grid: {
+          show: true,
+          borderColor: "#dddddd",
+          strokeDashArray: 5,
+          xaxis: {
+            lines: {
+              show: true,
+            },
+          },
+          padding: {
+            top: 2,
+            right: 20,
+          },
+        },
+        fill: {
+          opacity: 0.8,
+        },
+        tooltip: {
+          theme: "dark",
+        },
+      };
+
+      const chartConfigPie = {
+        series: [12, 55, 13, 43, 22],
+        chart: {
+          type: "pie",
+          width: 150,
+          height: 150,
+          toolbar: {
+            show: false,
+          },
+        },
+        title: {
+          show: "",
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        colors: [" #fb923c ", "#e85a50", "#a65d53", "#910f43", "#63072c"],
+        legend: {
+          show: false,
+        },
+      };
+
+      const chartPie = new ApexCharts(
+        document.querySelector("#pie-chart"),
+        chartConfigPie
+      );
+
+      const chart = new ApexCharts(
+        document.querySelector("#chart"),
+        chartConfig
+      );
+
+      chart.render();
+      chartPie.render();
+    </script>
+  </body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script></script>
